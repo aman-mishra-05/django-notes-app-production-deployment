@@ -1,12 +1,15 @@
 services:
   nginx:
-    context: ./nginx
+    build: 
+     context: ./nginx
     container_name: "nginx_cont"
     ports:
       - "80:80"
     networks:
       - notes-app
     restart: always
+    mem_limit: 64m
+    memswap_limit: 64m
     depends_on:
       django:
         condition: service_healthy
@@ -23,6 +26,10 @@ services:
     networks:
       - notes-app
     restart: always
+    mem_limit: 512m
+    memswap_limit: 512m
+    environment:
+      MYSQL_INNODB_BUFFER_POOL_SIZE: 128M
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$${MYSQL_ROOT_PASSWORD} || exit 1"]
       interval: 10s
@@ -42,6 +49,8 @@ services:
     env_file:
       - .env
     restart: always
+    mem_limit: 256m
+    memswap_limit: 256m
     healthcheck:
       test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/admin')\""]
       interval: 10s
