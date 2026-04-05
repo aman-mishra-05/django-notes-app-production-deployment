@@ -22,7 +22,8 @@ staticfiles/
 /coverage
 
 # production
-build/
+mynotes/build/
+mynotes/node_modules/
 
 # misc
 .DS_Store
