@@ -1,0 +1,6 @@
+mynotes/node_modules
+.git
+__pycache__
+*.pyc
+staticfiles/
+.env
