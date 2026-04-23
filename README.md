@@ -2,7 +2,7 @@
 
 A production-grade deployment of a full-stack Notes Application using **Docker**, **MySQL**, **Nginx**, and **AWS EC2**.
 
-> DevOps & Deployment by [Aman Mishra](https://github.com/aman-mishra-05)
+> Application developed by [Shubham Londhe](https://github.com/LondheShubham153) | DevOps & Deployment by [Aman Mishra](https://github.com/aman-mishra-05)
 
 ---
 
